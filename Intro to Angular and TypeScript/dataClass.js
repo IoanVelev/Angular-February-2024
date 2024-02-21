@@ -8,18 +8,10 @@ var Data = /** @class */ (function () {
         this.uri = uri;
         this.version = version;
         this.message = message;
+        this.response = undefined;
+        this.fullfilled = false;
     }
-    Data.prototype.printInfo = function () {
-        return {
-            method: this.method,
-            uri: this.uri,
-            version: this.version,
-            message: this.message,
-            response: undefined,
-            fulfilled: false
-        };
-    };
     return Data;
 }());
 var myData = new Data('GET', 'http://google.com', 'HTTP/1.1', '');
-console.log(myData.printInfo());
+console.log(myData);

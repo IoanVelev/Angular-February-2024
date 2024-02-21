@@ -1,28 +1,23 @@
 class Data {
     
+    response: undefined;
+    fullfilled:boolean;
     constructor(
-        public method: string,
-        public uri: string,
-        public version: string,
-        public readonly message: string
-        ) {
-        this.method = method;
+        public method:string,
+        public uri:string,
+        public version:string,
+        public readonly message:string
+    ){
+        
+        this.method = method 
         this.uri = uri;
         this.version = version;
         this.message = message;
-    }
-
-    printInfo() {
-        return {
-            method: this.method,
-            uri: this.uri,
-            version: this.version,
-            message: this.message,
-            response: undefined,
-            fulfilled: false
-        }
+        this.response = undefined;
+        this.fullfilled = false;
+       
     }
 }
 
 const myData = new Data('GET', 'http://google.com', 'HTTP/1.1', '');
-console.log(myData.printInfo());
+console.log(myData);
