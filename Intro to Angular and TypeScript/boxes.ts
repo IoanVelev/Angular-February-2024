@@ -1,5 +1,5 @@
 class Box<T>{
-    private _boxes: any = [];
+    private _boxes: T[] = [];
 
     public add(el: T){
         this._boxes.push(el);
