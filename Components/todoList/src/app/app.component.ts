@@ -7,7 +7,7 @@ import { ListItem } from 'src/shared/models/listItem';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  items = [
+  items: ListItem[] = [
     new ListItem('Take shower', true),
     new ListItem('Drink coffee', true),
     new ListItem('Read news and e-mails'),
