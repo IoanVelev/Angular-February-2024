@@ -1,6 +1,15 @@
 <div class="container">
-<div *ngIf="items.length === 0; then noTasks else showTasks">
 
+  <form>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Add new task" name="addTask">
+      <div class="col-auto">
+        <button class="btn btn-primary" type="submit">Add task</button>
+      </div>
+    </div>
+  </form>
+
+<div *ngIf="items.length === 0; then noTasks else showTasks">
 </div>
 
 <ng-template #noTasks>There are no tasks to display.</ng-template>

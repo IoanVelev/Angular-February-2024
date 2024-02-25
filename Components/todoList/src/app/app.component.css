@@ -1,3 +1,14 @@
 .task-list {
     list-style: none;
 }
+
+.input-group {
+   padding-left: 100px;
+   padding-right: 100px;
+   align-content: center;
+   padding-top: 30px;
+}
+
+.col-auto{
+    padding-left: 10px;
+}
