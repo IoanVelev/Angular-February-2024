@@ -7,10 +7,12 @@
 
 <ng-template #showTasks>
   <ul class="task-list">
-    <li *ngFor="let item of items">
+    <li *ngFor="let item of items; index as i">
     <div class="form-check">
       <label class="form-check-label">
-        <input class="checkbox" type="checkbox"> {{ item.taskText }}
+        <input class="checkbox" type="checkbox" [checked]="item.isComplete"
+        [attr.data-index]="i"
+        > {{ item.taskText }}
       </label>
     </div>
     </li>
