@@ -12,10 +12,17 @@ export class AppComponent {
     new ListItem('Drink coffee', true),
     new ListItem('Read news and e-mails'),
   ]
+
+  newTaskText = '';
   title = 'TodoList';
+
+  addNewTask(){
+    this.items.push(new ListItem(this.newTaskText));
+    this.newTaskText = '';
+  }
+  
 
   toggleItem(item: ListItem){
     item.isComplete = !item.isComplete;
-    console.log(item);
   }
 }

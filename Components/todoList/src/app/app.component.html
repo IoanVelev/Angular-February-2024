@@ -2,31 +2,39 @@
 
   <form>
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Add new task" name="addTask">
+      <input type="text" class="form-control" name="new-task-text" [(ngModel)]="newTaskText">
       <div class="col-auto">
-        <button class="btn btn-primary" type="submit">Add task</button>
+        <button class="btn btn-primary" type="submit"
+        (click)="$event.preventDefault(); addNewTask()"
+        >
+        Add task</button>
       </div>
     </div>
   </form>
 
-<div *ngIf="items.length === 0; then noTasks else showTasks">
+  <div class="row mt-4">
+    <div *ngIf="items.length === 0; then noTasks else showTasks">
+    </div>
+    
+    <ng-template #noTasks>There are no tasks to display.</ng-template>
+    
+    <ng-template #showTasks>
+      <ul class="task-list">
+        <li *ngFor="let item of items; index as i">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="checkbox" type="checkbox" [checked]="item.isComplete"
+            [attr.data-index]="i"
+            (click)="toggleItem(item)"
+            > {{ item.taskText }}
+          </label>
+        </div>
+        </li>
+      </ul>
+    </ng-template>
+  </div>
+
 </div>
 
-<ng-template #noTasks>There are no tasks to display.</ng-template>
-
-<ng-template #showTasks>
-  <ul class="task-list">
-    <li *ngFor="let item of items; index as i">
-    <div class="form-check">
-      <label class="form-check-label">
-        <input class="checkbox" type="checkbox" [checked]="item.isComplete"
-        [attr.data-index]="i"
-        (click)="toggleItem(item)"
-        > {{ item.taskText }}
-      </label>
-    </div>
-    </li>
-  </ul>
-</ng-template>
 
   
