@@ -1,5 +1,11 @@
 <div class="container">
-  <div>
-    {{ items[0].taskText }}
-  </div>
+  <ul class="task-list">
+    <li *ngFor="let item of items">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="checkbox" type="checkbox"> {{ item.taskText }}
+      </label>
+    </div>
+    </li>
+  </ul>
 </div>
