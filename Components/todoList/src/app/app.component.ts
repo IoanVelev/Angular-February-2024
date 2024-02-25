@@ -13,4 +13,9 @@ export class AppComponent {
     new ListItem('Read news and e-mails'),
   ]
   title = 'TodoList';
+
+  toggleItem(item: ListItem){
+    item.isComplete = !item.isComplete;
+    console.log(item);
+  }
 }
