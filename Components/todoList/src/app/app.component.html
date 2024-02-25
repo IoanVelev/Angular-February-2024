@@ -1,8 +1,11 @@
 <div class="container">
-<div *ngIf="items.length === 0">
-There are no tasks to display.
+<div *ngIf="items.length === 0; then noTasks else showTasks">
+
 </div>
 
+<ng-template #noTasks>There are no tasks to display.</ng-template>
+
+<ng-template #showTasks>
   <ul class="task-list">
     <li *ngFor="let item of items">
     <div class="form-check">
@@ -12,4 +15,6 @@ There are no tasks to display.
     </div>
     </li>
   </ul>
-</div>
+</ng-template>
+
+  
