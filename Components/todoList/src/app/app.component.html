@@ -13,6 +13,18 @@
   </form>
 
   <div class="row mt-4">
+    <div class="col-sm-4">
+      <select class="form-select"
+      [(ngModel)]="listFilter"
+      >
+        <option value="0">All</option>
+        <option value="1">Unfulfilled</option>
+        <option value="2">Fulfilled</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-4">
     <div *ngIf="items.length === 0; then noTasks else showTasks">
     </div>
     

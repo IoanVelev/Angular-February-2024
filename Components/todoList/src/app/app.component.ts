@@ -13,6 +13,8 @@ export class AppComponent {
     new ListItem('Read news and e-mails'),
   ]
 
+  listFilter: String = '0';
+
   newTaskText = '';
   title = 'TodoList';
 
