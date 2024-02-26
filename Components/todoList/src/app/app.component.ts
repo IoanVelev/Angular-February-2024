@@ -18,26 +18,26 @@ export class AppComponent {
   newTaskText = '';
   title = 'TodoList';
 
-  visibleItemsCopy: ListItem[] = this.items;
+  get visibleItemsCopy(): ListItem[] {
+    let value = this.listFilter;
+    console.log(value);
+    
+    if (value == '0') {
+      return this.items;
+    } else if (value == '1'){
+      return this.items.filter(item => item.isComplete == false);
+    }
+    else {
+      return this.items.filter(item => item.isComplete == true);
+    }
+  };
 
   addNewTask(){
     this.items.push(new ListItem(this.newTaskText));
     this.newTaskText = '';
   }
 
-  changedFilter(newValue: any){
-    if (newValue == '0') {
-      this.visibleItemsCopy = this.items;
-    } else if (newValue == '1'){
-      this.visibleItemsCopy = this.items.filter(item => item.isComplete == false);
-    }
-    else if (newValue == '2'){
-      this.visibleItemsCopy = this.items.filter(item => item.isComplete == true);
-    }
-    
-  }
-  
-
+ 
   toggleItem(item: ListItem){
     item.isComplete = !item.isComplete;
   }
