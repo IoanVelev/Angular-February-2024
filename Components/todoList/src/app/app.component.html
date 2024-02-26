@@ -16,6 +16,7 @@
     <div class="col-sm-4">
       <select class="form-select"
       [(ngModel)]="listFilter"
+      (ngModelChange)="changedFilter($event)"
       >
         <option value="0">All</option>
         <option value="1">Unfulfilled</option>
@@ -25,14 +26,14 @@
   </div>
 
   <div class="row mt-4">
-    <div *ngIf="items.length === 0; then noTasks else showTasks">
+    <div *ngIf="visibleItemsCopy.length === 0; then noTasks else showTasks">
     </div>
     
     <ng-template #noTasks>There are no tasks to display.</ng-template>
     
     <ng-template #showTasks>
       <ul class="task-list">
-        <li *ngFor="let item of items; index as i">
+        <li *ngFor="let item of visibleItemsCopy; index as i">
         <div class="form-check">
           <label class="form-check-label">
             <input class="checkbox" type="checkbox" [checked]="item.isComplete"
