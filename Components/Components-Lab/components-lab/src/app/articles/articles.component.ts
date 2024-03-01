@@ -10,10 +10,6 @@ import { ArticleData } from '../data/data';
 export class ArticlesComponent implements OnInit {
 articles !: Article[];
 
-constructor(){
-  //TODO
-}
-
 ngOnInit() {
   this.articles = new ArticleData().getData();
 }
