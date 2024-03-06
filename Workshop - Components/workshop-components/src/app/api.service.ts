@@ -16,10 +16,12 @@ export class ApiService {
     const { apiUrl } = environment;
 
     return this.http.get(`${apiUrl}/themes`);
-    
+
   }
 
-  getPosts(limit?:number){
+  getPosts(){
+    const { apiUrl } = environment;
 
+    return this.http.get(`${apiUrl}/posts?limit=5`);
   }
 }
