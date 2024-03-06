@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 
@@ -8,12 +8,15 @@ import { environment } from 'src/environments/environment.development';
 export class ApiService {
   
 
-  constructor(private http: HttpClientModule) {
-    const { apiUrl } = environment
+  constructor(private http: HttpClient ) {
+    
   }
 
   getThemes(){
+    const { apiUrl } = environment;
 
+    return this.http.get(`${apiUrl}/themes`);
+    
   }
 
   getPosts(limit?:number){
