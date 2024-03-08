@@ -16,7 +16,7 @@ export class ApiService {
   getThemes(){
     const { apiUrl } = environment;
 
-    return this.http.get<Theme>(`${apiUrl}/themes`);
+    return this.http.get<Theme[]>(`${apiUrl}/themes`);
 
   }
 
