@@ -201,6 +201,10 @@ button:hover {
     cursor: pointer;
 }
 
+/* aside  */
+
+
+
 /*Media queries */
 @media (min-width: 800px) {
     html {
