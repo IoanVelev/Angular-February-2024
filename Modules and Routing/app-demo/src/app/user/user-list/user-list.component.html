@@ -1,1 +1,5 @@
 <p>user-list works!</p>
+<button class="reloadBtn" (click)="fetchUsersData()">
+    <span *ngIf="!isLoading">Reload users data</span>
+    <app-loader *ngIf="isLoading"/>
+</button>

@@ -1,0 +1,13 @@
+.reloadBtn {
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    background-color: white;
+    color: black;
+}
+
+.reloadBtn:hover {
+    background-color: darkblue;
+    color: antiquewhite;
+    cursor: pointer;
+}

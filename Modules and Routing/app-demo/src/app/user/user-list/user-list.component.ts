@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
+  isLoading = false;
 
+  fetchUsersData(){
+    this.isLoading = true;
+
+
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2500);
+  }
 }
