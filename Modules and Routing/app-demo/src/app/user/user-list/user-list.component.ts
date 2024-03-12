@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
+import { User } from 'src/app/types/user';
 
 @Component({
   selector: 'app-user-list',
@@ -8,6 +9,7 @@ import { UserService } from '../user.service';
 })
 export class UserListComponent {
   isLoading = false;
+  users: User[] = [];
 
   constructor(private userService: UserService){
 
@@ -20,8 +22,7 @@ export class UserListComponent {
 
     setTimeout(() => {
       this.userService.getUsersData().subscribe(users => {
-        console.log(users);
-        
+       this.users = users;
       });
 
       this.isLoading = false;

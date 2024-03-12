@@ -1,5 +1,15 @@
 <p>user-list works!</p>
 <button class="reloadBtn" (click)="fetchUsersData()">
-    <span *ngIf="!isLoading">Reload users data</span>
-    <app-loader *ngIf="isLoading"/>
+    <span>Reload users data</span>
 </button>
+<br>
+<br>
+<br>
+<app-loader *ngIf="isLoading"/>
+<div *ngIf="!isLoading">
+<ul>
+    <li *ngFor="let user of users">
+        {{ user.name }} with id {{ user.id }} works for {{ user.company.name }}
+    </li>
+</ul>
+</div>
