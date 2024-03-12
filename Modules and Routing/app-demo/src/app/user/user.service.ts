@@ -6,11 +6,11 @@ import { User } from '../types/user';
   providedIn: 'root'
 })
 export class UserService {
-API = `https://jsonplaceholder.typicode.com/users`;
+  API = `https://jsonplaceholder.typicode.com/users`;
   constructor(private http: HttpClient) { }
 
 
-  getUsersData(){
-    this.http.get<User[]>(this.API);
+  getUsersData() {
+    return this.http.get<User[]>(this.API);
   }
 }

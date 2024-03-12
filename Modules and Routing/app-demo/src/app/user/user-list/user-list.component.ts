@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-list',
@@ -8,11 +9,21 @@ import { Component } from '@angular/core';
 export class UserListComponent {
   isLoading = false;
 
+  constructor(private userService: UserService){
+
+  }
+
   fetchUsersData(){
+    
     this.isLoading = true;
 
 
     setTimeout(() => {
+      this.userService.getUsersData().subscribe(users => {
+        console.log(users);
+        
+      });
+
       this.isLoading = false;
     }, 2500);
   }
