@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
+import { TodoModule } from './todo/todo.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     CoreModule,
     UserModule,
+    TodoModule,
     HttpClientModule
   ],
   providers: [],
