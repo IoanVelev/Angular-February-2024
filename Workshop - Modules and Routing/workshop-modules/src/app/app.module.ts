@@ -9,20 +9,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
 import { ThemeModule } from './theme/theme.module';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     SharedModule,
     HttpClientModule,
     UserModule,
-    ThemeModule
+    ThemeModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
