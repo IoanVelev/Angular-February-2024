@@ -1,5 +1,5 @@
 <main>
-    <app-welcome-msg [isLoggedIn]="isLoggedIn" />
+    <app-welcome-msg *ngIf="!isLoggedIn" [isLoggedIn]="isLoggedIn" />
 <div *ngIf="isLoading" class="loader">
     <app-loader></app-loader>
 </div>
