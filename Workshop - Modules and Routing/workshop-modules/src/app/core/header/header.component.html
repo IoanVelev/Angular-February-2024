@@ -16,10 +16,10 @@
         <div *ngIf="isLoggedIn" class="mini-navbar">
             <ul>
                 <li>
-                    <a routerLink="/profile">Profile</a>
+                    <a routerLink="/profile">{{userName}}'s Profile</a>
                 </li>
-                <li>
-                    <a routerLink="/logout">Logout</a>
+                <li >
+                    <a (click)="logout()" routerLink="/logout" >Logout</a>
                 </li>
             </ul>
         </div>

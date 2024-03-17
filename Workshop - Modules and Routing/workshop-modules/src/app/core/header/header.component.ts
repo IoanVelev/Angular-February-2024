@@ -7,10 +7,19 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  constructor(private userService: UserService){}
 
   get isLoggedIn():boolean {
     return this.userService.isLogged;
   }
 
-  constructor(private userService: UserService){}
+  get userName(): string {
+    return this.userService.authUser?.username || '';
+  }
+
+
+  logout(){
+    this.userService.logout();
+  }
+
 }
