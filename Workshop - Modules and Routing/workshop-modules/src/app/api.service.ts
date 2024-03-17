@@ -21,10 +21,10 @@ export class ApiService {
 
   }
 
-  getSingleTheme(){
+  getSingleTheme(id: string){
     const { apiUrl } = environment;
-    //this.http.get<Theme>(`apiUrl`)
-    //TODO
+    return this.http.get<Theme>(`${apiUrl}/themes/${id}`);
+
   }
 
   createTheme(themeName: string, postText: string){
