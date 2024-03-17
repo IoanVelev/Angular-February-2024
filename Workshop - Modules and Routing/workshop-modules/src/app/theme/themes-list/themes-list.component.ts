@@ -25,13 +25,16 @@ export class ThemesListComponent implements OnInit{
   isSubscribed(theme: Theme){
     const isSubscribedUser = theme.subscribers.find(s => s === this.userId);
     
-    return isSubscribedUser;
+    return !!isSubscribedUser;
+  }
+
+  subscribe(theme: Theme){
+    theme.subscribers.push(this.userId);
   }
 
   ngOnInit(): void {
     this.api.getThemes().subscribe((themes) => {
        this.themes = themes;
-       console.log(themes);
        
        setTimeout(() => {
         this.isLoading = false;
