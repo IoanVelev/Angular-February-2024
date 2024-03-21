@@ -9,11 +9,25 @@ export class HighlightDirective implements OnInit{
 
   ngOnInit(): void {
     //Bad way
-    this.elRef.nativeElement.style.background = 'grey';
+    //this.elRef.nativeElement.style.background = 'grey';
 
     //Good way
-    this.renderer.setStyle(this.elRef.nativeElement, 'background', 'green');
+    //this.renderer.setStyle(this.elRef.nativeElement, 'background', 'green');
+
+    this.renderer.listen(this.elRef.nativeElement, 'click', this.onClickHandler.bind(this));
+    this.renderer.listen(this.elRef.nativeElement, 'mouseleave', this.onMouseLeave.bind(this));
+  }
+
+  onClickHandler(e: MouseEvent): void {
+    console.log('ON CLICK');
     
+    this.renderer.setStyle(this.elRef.nativeElement, 'background', 'grey');
+  }
+
+  onMouseLeave(): void {
+    console.log('ON LEAVE');
+    
+    this.renderer.setStyle(this.elRef.nativeElement, 'background', 'initial');
   }
 
 }
