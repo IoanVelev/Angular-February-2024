@@ -1,0 +1,33 @@
+<button routerLink="/home">Go to home page</button>
+<h1>Login page</h1>
+
+
+<!--Template driven approach-->
+
+<form #loginForm="ngForm" (ngSubmit)="formSubmitHandler(loginForm)">
+    <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" placeholder="your_email@gmail.com" 
+        ngModel 
+        required 
+        email
+        #emailInput="ngModel" />
+    </div>
+
+    <div *ngIf="emailInput.touched">
+        <div *ngIf="emailInput.errors?.['required']" style="color: red;">
+        Email is required!
+        </div>
+
+        <div *ngIf="emailInput.errors?.['email']" style="color: red;">
+            Email is not valid!
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" ngModel required />
+    </div>
+
+    <button>Login</button>
+</form>

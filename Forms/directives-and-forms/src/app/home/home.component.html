@@ -1,0 +1,21 @@
+<h2 appHighlight>Hello, Directives</h2>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Welcome to home page</p>
+<hr/>
+<button appMyRouterLink="/login">Go to login page</button>
+<button appMyRouterLink="/register">Go to register page</button>
+<hr/>
+
+<div *ngIf="true">Simple div 1</div>
+
+<ng-template [ngIf]="true">
+    <div>Simple div 2</div>
+</ng-template>
+
+<button (click)="toggle()">Toggle</button>
+
+<!--Custom directives-->
+<!--Usage 1-->
+
+<div *appMyStructural="isShown">Random text: Lorem ipsum dolor sit amet.</div>
+
