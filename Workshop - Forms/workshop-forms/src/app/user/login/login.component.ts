@@ -20,10 +20,9 @@ export class LoginComponent {
       
       return;
     }
-
-    console.log(form.value);
     
-
+    console.log(form.value);
+  
     this.userService.login();
     this.router.navigate(['/home']);
   }
