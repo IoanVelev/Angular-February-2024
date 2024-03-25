@@ -81,7 +81,7 @@
 
 
 
-            <button>Create Account</button>
+            <button [disabled]="form.invalid" [style]="{ backgroundColor: form.invalid ? 'red' : '' }">Create Account</button>
 
             <p class="text-center">
                 Have an account?
