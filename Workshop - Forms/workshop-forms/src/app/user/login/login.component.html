@@ -6,13 +6,8 @@
 
             <p class="field field-icon">
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input class="input-error" type="email" name="email" id="email" 
-                    placeholder="john.doe@gmail.com" 
-                    ngModel
-                    #inputEmail="ngModel"
-                    required
-                    [appEmail]="['bg', 'com']"
-                     >
+                <input class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com" ngModel
+                    #inputEmail="ngModel" required [appEmail]="['bg', 'com']">
             </p>
 
             <ng-container *ngIf="inputEmail.touched">
@@ -27,24 +22,17 @@
 
             <p class="field field-icon">
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" 
-                name="password" 
-                id="password" 
-                placeholder="******" 
-                ngModel
-                #inputPassword="ngModel" 
-                required minlength="4" 
-                maxlength="8"
-                >
+                <input type="password" name="password" id="password" placeholder="******" ngModel
+                    #inputPassword="ngModel" required minlength="5">
             </p>
 
-            <ng-container>
-                <!-- <p class="error">
-                Password is required!
-            </p>
-            <p class="error">
-                Password must be at least 4 characters!
-            </p> -->
+            <ng-container *ngIf="inputPassword.touched">
+                <p class="error" *ngIf="inputPassword.errors?.['required']">
+                    Password is required!
+                </p>
+                <p class="error" *ngIf="inputPassword.errors?.['minlength']">
+                    Password must be at least 5 characters!
+                </p>
             </ng-container>
 
 
