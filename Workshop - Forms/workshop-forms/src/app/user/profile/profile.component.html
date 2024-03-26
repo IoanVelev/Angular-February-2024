@@ -56,7 +56,7 @@
                 <p class="error" *ngIf="form.get('tel')?.errors?.['required']">Phone number is required!</p>
             </ng-container>
 
-            <button class="red-button">Cancel</button>
+            <button class="red-button" (click)="onCancelClick()">Cancel</button>
             <button class="green-button" [style]="{ backgroundColor: form.invalid? 'grey' : '' }">Save</button>
         </form>
     </ng-container>

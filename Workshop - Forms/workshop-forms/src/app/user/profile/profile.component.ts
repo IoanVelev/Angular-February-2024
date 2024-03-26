@@ -40,4 +40,8 @@ saveProfileHandler(): void {
   this.profileDetails = this.form.value as ProfileDetails;
   this.onToggle();
 }
+
+onCancelClick(): void {
+  this.onToggle();
+}
 }
