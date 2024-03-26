@@ -14,14 +14,14 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     RegisterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     RouterModule,
-    FormsModule,
     SharedModule,
+    FormsModule,
     ReactiveFormsModule
   ]
 })
